@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block search %}
+
+<h1 class="answer" align="center">{{ answer }}</h1>
+
+
+{% if instruct %}
+<div class="content">
+    {% autoescape off %}
+    {% for i in instruct %}
+    {{i.0.content|linebreaks}}
+    {{i.0.image}}
+    {% endfor %}
+    {% endautoescape %}
+</div>
+{% endif %}
+
+
+{% endblock %}

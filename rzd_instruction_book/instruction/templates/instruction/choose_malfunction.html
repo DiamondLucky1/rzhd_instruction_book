@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block malfunction %}
+
+ <div style="margin:35px"  class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 ">
+     {% for m in all_malfunctions %}
+    <div class="col-sm-6 ">
+    <div class="card card text-bg-primary">
+            <img  src="{{m.image.url}}" class="card-img-top customers-img" alt="{{m.name}}" />
+      <div class="card-body">
+<!--          <h5 class="card-title" >Схема пневматическая ЭД9М</h5>-->
+        <a href="{{m.get_absolute_url}}" class="btn btn-primary">{{m.name}}</a>
+      </div>
+    </div>
+  </div>
+     {% endfor %}
+ </div>
+
+{% endblock %}

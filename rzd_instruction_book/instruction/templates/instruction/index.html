@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>This is the main page
+    </h1>
+<div>
+
+<h2 align="center">
+{{ answer }}
+
+{% autoescape off %}
+    {% for i in instruct %}
+    {{ i.0.content }}
+    {% endfor %}
+ {% endautoescape %}
+</h2>
+</div>
+{% endblock %}

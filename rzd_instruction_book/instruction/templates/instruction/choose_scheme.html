@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block scheme %}
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 ">
+    {% for s in all_scheme %}
+    <div class="col-sm-6 ">
+    <div class="card card text-bg-primary">
+            <img src="{{s.image.url}}" class="card-img-top customers-img"  alt="{{s.name}}" />
+      <div class="card-body">
+<!--          <h5 class="card-title" >Схема пневматическая ЭД9М</h5>-->
+        <a href="{{s.get_absolute_url}}" class="btn btn-primary">{{s.name}}</a>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+{% endblock %}
