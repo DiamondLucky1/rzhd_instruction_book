@@ -56,6 +56,23 @@
               <li><a class="dropdown-item" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BA%D0%BE%D0%BC%D0%BE%D1%82%D0%B8%D0%B2">Локомотивы</a></li>
           </ul>
         </li>
+
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Тесты
+          </a>
+
+          <ul class="dropdown-menu">
+            {% for topic in topics_test %}
+            <li><a class="dropdown-item" href="{% url 'polls:test' topic.id %}">
+                {{topic}}</a></li>
+
+              {% endfor %}
+          </ul>
+        </li>
+
       </ul>
 
       <form action="{% url 'search' %}" method="get" class="d-flex" role="search">
@@ -123,23 +140,31 @@
         </div>
 
 
-      {% block instruction %}
-      {% endblock %}
+        {% block test %}
+        {% endblock %}
 
-      {% block content %}
-      {% endblock %}
+        {% block instruction %}
+        {% endblock %}
 
-      {% block scheme %}
-      {% endblock %}
+        {% block content %}
+        {% endblock %}
 
-      {% block scheme_show %}
-      {% endblock %}
+        {% block scheme %}
+        {% endblock %}
 
-      {% block malfunction %}
-      {% endblock %}
+        {% block scheme_show %}
+        {% endblock %}
+
+        {% block malfunction %}
+        {% endblock %}
 
         {% block search %}
         {% endblock %}
+
+        {% block selection_of_instruction %}
+        {% endblock %}
+
+
     </div>
     <div class="btn-up btn-up_hide"></div>
   </body>

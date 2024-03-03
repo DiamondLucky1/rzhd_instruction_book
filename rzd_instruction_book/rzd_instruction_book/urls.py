@@ -20,11 +20,12 @@ from django.urls import path, include
 
 from rzd_instruction_book import settings
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('instruction.urls'))
+    path('', include('polls.urls')),
+    path('', include('instruction.urls')),
 ]
-
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

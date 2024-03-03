@@ -26,6 +26,15 @@
         border: 1px solid black; /* Параметры рамки */
     }
 
+    .test {
+        background-color: white;
+        margin: 3% 10%;
+        padding: 100px 100px 100px 100px;
+        border: 1px solid black;
+
+
+    }
+
     .logo {
         background: url('#') no-repeat 10px 5px;
         width: 70px;
@@ -90,9 +99,7 @@
 
 
 /* убераем переносы строк */
-    br {
-        display: none;
-    }
+
 
 
 

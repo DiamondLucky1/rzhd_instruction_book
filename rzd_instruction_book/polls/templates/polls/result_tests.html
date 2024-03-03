@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Вопрос: {{ question }}</h2>
+
+{% if selected_choice %}
+<h1>Ваш ответ, верный:) {{ selected_choice }} </h1>
+{% else %}
+<h1>Ваш ответ, не верный! :(  Правильный ответ: {{ right_answer }}</h1>
+{% endif %}
+
+
+
+
+<button ><a href="javascript:history.back()" title="Вернуться к вопросам" > Вернуться к вопросам </a></button>
+
+</body>
+</html>

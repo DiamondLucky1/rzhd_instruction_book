@@ -1,5 +1,7 @@
-
+{% extends 'base.html' %}
 {% load static %}
+
+{% block selection_of_instruction %}
 
 <link type="image/x-icon" href="{% static 'instruction/images/logo1.png' %}" rel="shortcut icon">
 <link type="text/css" href="{% static 'instruction/css/styles.css' %}" rel="stylesheet" />
@@ -9,7 +11,8 @@
 
 
 
-<a href="/instruction/"><b >Назад к инструкциям</b></a>
+<!--<a href="/instruction/"><b >Назад к инструкциям</b></a>-->
+<button ><a href="javascript:history.back()" title="Вернуться к инструкциям" > Назад к инструкциям </a></button>
 
 <div class="content">
     {% autoescape off %}
@@ -26,5 +29,5 @@
 
 </div>
 
-
+{% endblock %}
 

@@ -1,8 +1,5 @@
-from msilib.schema import ListView
-
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-
+from polls.models import *
 from instruction.models import *
 from django.db.models import Q
 
@@ -14,24 +11,26 @@ menu = [{"title": "Инструкции", "url_name": "instruction"},
 
 list_of_instruction = Instruction.objects.all()
 
-def index(request):
-
-
-
-
-    data = {"title": "Главная",
-            "menu": menu,
-            # "list_of_contents": list_of_instruction,
-    }
-    return render(request, 'instruction/index.html', context=data)
+# def index(request):
+#     data = {"title": "Главная",
+#             "menu": menu,
+#             # "list_of_contents": list_of_instruction,
+#     }
+#     return render(request, 'instruction/index.html', context=data)
 
 
 def instruction_page(request):
+    topics_test = Test.objects.all()
+    # print(topics_test)
     data = {"menu": menu,
             "list_of_instruction": list_of_instruction,
-            "title": "Инструкции"
+            "title": "Инструкции",
+            "topics_test": topics_test
     }
+
+
     return render(request, 'instruction/instruction_page.html', context=data)
+
 
 
 def instruction_show(request, inst_slug):
@@ -41,6 +40,7 @@ def instruction_show(request, inst_slug):
     instuction = get_object_or_404(Instruction, slug=inst_slug)
     data = {'title': f'Инструкция по: {instuction.title}',
             'instruction': instuction,
+            "menu": menu,
             }
     # print(instuction)
     # print(data)
